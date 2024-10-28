@@ -1,4 +1,4 @@
-# Contributing to Harmonic Balancer Project
+# Contributing Ami Foundation Quantum Energy Project
 
 Thank you for considering contributing to the Harmonic Balancer Project! We welcome contributions from the community and are grateful for your support.
 
@@ -21,8 +21,7 @@ We welcome pull requests for bug fixes, improvements, and new features. To submi
 
 2. **Clone the Repository**: Clone your forked repository to your local machine.
     ```sh
-    git clone https://github.com/amiaiorg/harmonic-balancer-project.git
-    cd harmonic-balancer-project-final
+    git clone [https://github.com/amiaiorg/GraphneneEnergyLabs](https://github.com/amiaiorg/GrapheneEnergyLabs.git)
     ```
 
 3. **Create a Branch**: Create a new branch for your changes.
@@ -58,10 +57,10 @@ Please ensure that your code adheres to the following standards:
 
 ### Code of Conduct
 
-Please note that this project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [matt@amiai.org](mailto:matt@amiai.org).
+Please note that this project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [matt@amiai.org](mailto:matt@amiai.foundation).
 
 ## Getting Help
 
-If you need help or have any questions, feel free to reach out by opening an issue on GitHub or contacting [matt@amiai.org](mailto:matt@amiai.org).
+If you need help or have any questions, feel free to reach out by opening an issue on GitHub or contacting [matt@amiai.foundation](mailto:matt@amiai.foundation).
 
 Thank you for your contributions!
