@@ -21,7 +21,7 @@ We welcome pull requests for bug fixes, improvements, and new features. To submi
 
 2. **Clone the Repository**: Clone your forked repository to your local machine.
     ```sh
-    git clone https://github.com/amiaiorg/GraphneneEnergyLabs
+    git clone https://github.com/amiaiorg/GrapheneEnergyLabs.git
     ```
 
 3. **Create a Branch**: Create a new branch for your changes.
@@ -57,7 +57,7 @@ Please ensure that your code adheres to the following standards:
 
 ### Code of Conduct
 
-Please note that this project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [matt@amiai.org](mailto:matt@amiai.foundation).
+Please note that this project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [matt@amiai.foundation](mailto:matt@amiai.foundation).
 
 ## Getting Help
 
