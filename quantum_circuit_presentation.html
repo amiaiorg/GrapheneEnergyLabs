@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Circuit Design Presentation</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            padding: 2rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: var(--primary-color);
+        }
+
+        .quantum-circuit {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .qubit-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            height: 50px;
+            position: relative;
+        }
+
+        .qubit-label {
+            width: 120px;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .quantum-wire {
+            flex-grow: 1;
+            height: 2px;
+            background: var(--primary-color);
+            position: relative;
+        }
+
+        .gate {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--accent-color);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            background: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gate:hover {
+            transform: scale(1.1);
+        }
+
+        .coupling-line {
+            position: absolute;
+            width: 2px;
+            background: var(--accent-color);
+            z-index: 1;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 100;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: var(--accent-color);
+        }
+
+        .material-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .material-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .highlight {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Title Slide -->
+        <div class="slide active">
+            <div class="slide-content">
+                <h1>DNA-Inspired Quantum Circuit Design</h1>
+                <p>A Hybrid Graphene-Silicon-Diamond Implementation</p>
+            </div>
+        </div>
+
+        <!-- Architecture Slide -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Circuit Architecture</h2>
+                <div class="quantum-circuit">
+                    <div class="qubit-line">
+                        <div class="qubit-label">Q0 (Graphene)</div>
+                        <div class="quantum-wire">
+                            <div class="gate" style="left: 20%">H</div>
+                        </div>
+                    </div>
+                    <div class="qubit-line">
+                        <div class="qubit-label">Q1 (Silicon)</div>
+                        <div class="quantum-wire">
+                            <div class="gate" style="left: 40%">X</div>
+                        </div>
+                    </div>
+                    <div class="qubit-line">
+                        <div class="qubit-label">Q2 (Silicon)</div>
+                        <div class="quantum-wire">
+                            <div class="gate" style="left: 60%">Y</div>
+                        </div>
+                    </div>
+                    <div class="qubit-line">
+                        <div class="qubit-label">Q3 (Diamond)</div>
+                        <div class="quantum-wire">
+                            <div class="gate" style="left: 80%">Z</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Materials Slide -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Material Properties</h2>
+                <div class="material-info">
+                    <div class="material-card">
+                        <h3>Graphene Layer</h3>
+                        <p>Electron Mobility: >200,000 cm²/V·s</p>
+                        <p>Layer Thickness: 0.34nm</p>
+                        <p>Coupling Strength: 0.1</p>
+                    </div>
+                    <div class="material-card">
+                        <h3>Silicon Interface</h3>
+                        <p>Bandgap: 1.12 eV</p>
+                        <p>Coherence Time: ~1ms</p>
+                        <p>Operating Temp: 4K</p>
+                    </div>
+                    <div class="material-card">
+                        <h3>Diamond Layer</h3>
+                        <p>NV Center Density: 10¹⁴/cm³</p>
+                        <p>T2 Time: >1ms</p>
+                        <p>Q-Factor: >10⁶</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Metrics Slide -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Performance Metrics</h2>
+                <div class="metrics">
+                    <div class="metric-card">
+                        <h3>Coherence</h3>
+                        <p>Maximum Time: 1000 ps</p>
+                        <p>Stability Index: 568.84</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>State Transfer</h3>
+                        <p>Fidelity: >93%</p>
+                        <p>Operation Time: <1ns</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Error Correction</h3>
+                        <p>Error Rate: <0.1%</p>
+                        <p>Recovery Time: 2ns</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Coupling</h3>
+                        <p>Strength: 0.1-0.2</p>
+                        <p>Frequency: 4.40 GHz</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button onclick="previousSlide()">Previous</button>
+        <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        });
+
+        // Auto-advance slides every 10 seconds
+        setInterval(nextSlide, 10000);
+    </script>
+</body>
+</html>
