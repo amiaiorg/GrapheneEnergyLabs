@@ -1,36 +1,27 @@
-from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 import numpy as np
 
-def create_resonance_circuit(resonance_phase=4.40*np.pi, num_qubits=4):
-    # Create registers and circuit
-    qr = QuantumRegister(num_qubits, 'q')
-    cr = ClassicalRegister(num_qubits, 'c')
-    qc = QuantumCircuit(qr, cr)
-
-    # Create superposition
-    qc.h(qr[0])
-
-    # Apply controlled phase rotations
-    for i in range(num_qubits-1):
-        qc.cp(resonance_phase/num_qubits, qr[i], qr[i+1])
-        qc.cx(qr[i], qr[i+1])
-
-    # Add measurement
-    qc.measure(qr, cr)
-    
-    return qc
-
-def simulate_circuit(qc, shots=1000):
-    from qiskit import Aer, execute
-    
-    # Use the Aer simulator
-    backend = Aer.get_backend('qasm_simulator')
-    job = execute(qc, backend, shots=shots)
-    result = job.result()
-    counts = result.get_counts(qc)
-    
-    # Calculate fidelity
-    total_counts = sum(counts.values())
-    entanglement_fidelity = max(counts.values()) / total_counts
-    
-    return counts, entanglement_fidelity
+class QuantumResonanceCircuit:
+    def __init__(self, resonance_freq=4.40e9, coupling_strength=0.1):
+        self.resonance_freq = resonance_freq
+        self.coupling_strength = coupling_strength
+        self.num_qubits = 4
+        
+    def initialize_state(self):
+        return np.array([1.0] + [0.0] * (2**self.num_qubits - 1), dtype=complex)
+        
+    def get_hamiltonian(self):
+        dim = 2**self.num_qubits
+        H = np.zeros((dim, dim), dtype=complex)
+        # Add resonant coupling terms
+        for i in range(self.num_qubits-1):
+            H[i,i+1] = self.coupling_strength
+            H[i+1,i] = self.coupling_strength
+        # Add energy terms
+        for i in range(dim):
+            H[i,i] = self.resonance_freq * bin(i).count('1')
+        return H
+        
+    def evolve_state(self, state, time):
+        H = self.get_hamiltonian()
+        U = np.exp(-1j * H * time)
+        return U @ state

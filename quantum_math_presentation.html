@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Circuit Presentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        .slide-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .slide {
+            flex: 1;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .slide.active {
+            display: flex;
+        }
+        .slide-content {
+            text-align: center;
+        }
+        .math-section {
+            margin-top: 20px;
+        }
+        .equation {
+            margin: 10px 0;
+        }
+        .navigation {
+            text-align: center;
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #ccc;
+        }
+        .metric-card {
+            display: inline-block;
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .highlight {
+            animation: pulse 2s infinite;
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Title Slide -->
+        <div class="slide active">
+            <div class="slide-content">
+                <h1>DNA-Inspired Quantum Circuit Design</h1>
+                <p>A Hybrid Graphene-Silicon-Diamond Implementation</p>
+            </div>
+        </div>
+
+        <!-- Architecture Slide -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Circuit Architecture</h2>
+                <div class="quantum-circuit">
+                    <div class="qubit-line">
+                        <div class="qubit-label">Q0 (Graphene)</div>
+                        <div class="quantum-wire">
+                            <div class="gate" style="left: 20%">H</div>
+                        </div>
+                    </div>
+                    <div class="qubit-line">
+                        <div class="qubit-label">Q1 (Silicon)</div>
+                        <div class="quantum-wire">
+                            <div class="gate" style="left: 40%">X</div>
+                        </div>
+                    </div>
+                    <div class="qubit-line">
+                        <div class="qubit-label">Q2 (Silicon)</div>
+                        <div class="quantum-wire">
+                            <div class="gate" style="left: 60%">Y</div>
+                        </div>
+                    </div>
+                    <div class="qubit-line">
+                        <div class="qubit-label">Q3 (Diamond)</div>
+                        <div class="quantum-wire">
+                            <div class="gate" style="left: 80%">Z</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Materials Slide -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Material Properties</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <div>
+                        <h3>Graphene Layer</h3>
+                        <p>Mobility: &gt;200,000 cm²/V·s</p>
+                        <p>Thickness: 0.34nm</p>
+                        <p>Frequency: 4.40 GHz</p>
+                    </div>
+                    <div>
+                        <h3>Silicon Interface</h3>
+                        <p>Bandgap: 1.12 eV</p>
+                        <p>Coherence: ~1ms</p>
+                        <p>Temp: 4K</p>
+                    </div>
+                    <div>
+                        <h3>Diamond NV Centers</h3>
+                        <p>Density: 10¹⁴/cm³</p>
+                        <p>T2 Time: &gt;1ms</p>
+                        <p>Q-Factor: &gt;10⁶</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mathematical Foundations -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Mathematical Foundations</h2>
+                
+                <div class="math-section">
+                    <h3>1. Harmonic Series Foundation</h3>
+                    <div class="equation">
+                        \[ f_n = n \cdot f_1 \]
+                        <p>Base frequency relationship for quantum states</p>
+                    </div>
+
+                    <h3>2. Resonance Conditions</h3>
+                    <div class="equation">
+                        \[ A = \frac{F_0}{\sqrt{(k - m \omega^2)^2 + (b \omega)^2}} \]
+                        <p>Quantum state amplitude response</p>
+                    </div>
+
+                    <h3>3. Wave Interference Patterns</h3>
+                    <div class="equation">
+                        \[ y = y_1 + y_2 \]
+                        <p>Quantum state superposition principle</p>
+                    </div>
+
+                    <h3>4. Golden Harmony Integration</h3>
+                    <div class="equation">
+                        \[ \Phi = \sqrt{(R \cdot F^2) + E^2} \]
+                        <p>Resonance-Energy coupling relationship</p>
+                    </div>
+
+                    <h3>5. Hybrid Material Utilization</h3>
+                    <div class="equation">
+                        \[ \Psi = \alpha \cdot \text{Graphene} + \beta \cdot \text{Diamond} + \gamma \cdot \text{Silicon} \]
+                        <p>Quantum circuit utilizing graphene, diamond, and silicon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Metrics -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2>Performance Metrics</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <div>
+                        <h3>Coherence</h3>
+                        <p>Max Time: 1000 ps</p>
+                        <p>Stability: 568.84</p>
+                        <p>Fidelity: &gt;93%</p>
+                    </div>
+                    <div>
+                        <h3>Operations</h3>
+                        <p>Gate Time: &lt;1ns</p>
+                        <p>Error Correction: 2ns</p>
+                        <p>Recovery: 99.9%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button onclick="previousSlide()">Previous</button>
+            <button onclick="nextSlide()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+    </script>
+</body>
+</html>

@@ -39,7 +39,7 @@ This lab provides a comprehensive overview of the Quantum Energy Converter, incl
 
 ### Diagrams
 
-The diagrams for the quantum circuit and converters are included in the `quantum_converter_visualization.html` file. Open this file in a web browser to view the visualizations and interact with the controls.
+The diagrams for the quantum circuit and math is included in the `quantum_math_presentation.html` file. The diagram for the energy conversion and math is inclucded in the `quantum_converter_visualization.html` - this file is obsolete and will be updated shortly. Open this file in a web browser to view the visualizations and interact with the controls.
 
 ### Mathematical Framework
 
