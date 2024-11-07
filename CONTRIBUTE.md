@@ -1,4 +1,4 @@
-# Contributing Dxns Hub Foundation Quantum Energy Project
+# Contributing Dxns Hub Quantum Energy Project
 
 Thank you for considering contributing to the Harmonic Balancer Project! We welcome contributions from the community and are grateful for your support.
 
