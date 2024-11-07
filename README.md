@@ -1,4 +1,4 @@
-# Welcome to the Ami Foundation Quantum Energy Project
+# Welcome to DxNs Hub Quantum Energy Project
 
 ## Our Mission
 
